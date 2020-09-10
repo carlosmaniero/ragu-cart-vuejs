@@ -6,11 +6,15 @@ const path = require('path');
 global.window = domino.createWindow();
 global.document = window.document;
 
+const getAssetsPrefix = (port) => {
+  return process.env.HEROKU_APP_NAME ? `${process.env.HEROKU_APP_NAME}` : `http://localhost:${port}`;
+}
+
 const init = async () => {
   const port = process.env.PORT || 3100;
 
   const config = {
-    assetsPrefix: `http://localhost:${port}/component-assets/`,
+    assetsPrefix: `${getAssetsPrefix(port)}/component-assets/`,
     server: {
       assetsEndpoint: '/component-assets/'
     },
