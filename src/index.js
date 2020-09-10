@@ -1,5 +1,10 @@
+import * as domino from "domino";
+
 const {ComponentsCompiler, createDefaultWebpackConfiguration, RaguServer} = require("ragu-server");
 const path = require('path');
+
+global.window = domino.createWindow();
+global.document = window.document;
 
 const init = async () => {
   const port = process.env.PORT || 3100;
@@ -10,7 +15,7 @@ const init = async () => {
       assetsEndpoint: '/component-assets/'
     },
     components: {
-      namePrefix: 'catalog',
+      namePrefix: 'cart',
       output: path.join(__dirname, 'component-assets'),
       sourceRoot: path.join(__dirname, 'components')
     },
