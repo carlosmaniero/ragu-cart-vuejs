@@ -1,10 +1,11 @@
 {
   "type": "es6",
+
   "scripts": {
-    "dev": "yarn build && yarn serve",
-    "build": "tsc",
+    "build": "babel src -d dist",
     "start": "HEROKU_APP_NAME=https://ragu-cart-vuejs.herokuapp.com yarn serve",
-    "serve": "node dist/index.js"
+    "serve": "node dist/index.js",
+    "dev": "yarn build && yarn serve"
   },
   "dependencies": {
     "@babel/cli": "^7.11.6",
