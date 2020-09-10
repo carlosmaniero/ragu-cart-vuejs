@@ -1,14 +1,14 @@
 {
   "type": "es6",
   "scripts": {
-    "start": "babel-node index.js"
+    "build": "babel src -d dist",
+    "serve": "node dist/index.js",
+    "start": "yarn build && yarn serve"
   },
   "dependencies": {
+    "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
-    "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.5",
-    "@babel/register": "^7.11.5",
-    "babel-cli": "^7.0.0",
     "chunks-2-json-webpack-plugin": "^1.0.4",
     "ragu-server": "^0.0.2",
     "vue": "^2.6.12",
