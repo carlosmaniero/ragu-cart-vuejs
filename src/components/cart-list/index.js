@@ -12,7 +12,7 @@ function createVueApp() {
     },
     methods: {
       changeValue(item, e) {
-        this.cartService.updateCount(item, parseInt(e.target.value));
+        this.cartService.updateCount(item, Math.max(parseInt(e.target.value || ''), 0));
         this.$el.dispatchEvent(new CustomEvent('cart-updated', {bubbles: true}));
         this.$forceUpdate();
       },
