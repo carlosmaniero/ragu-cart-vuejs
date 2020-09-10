@@ -1,0 +1,36 @@
+.emptyStage h1 {
+    font-size: 18px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
+.catalogButton {
+    border-radius: 3px;
+    border: 2px solid palevioletred;
+    background: palevioletred;
+    color: white;
+    padding: 1em 2em;
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.productItem {
+    display: grid;
+    grid-template-columns: 128px 1fr 75px;
+    align-items: center;
+    grid-gap: 20px;
+    border-bottom: 1px solid #eeeeee;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    padding-bottom: 20px;
+}
+
+.productItem h1 {
+    font-size: 18px;
+    color: #333333;
+}

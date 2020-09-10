@@ -1,7 +1,7 @@
 {
   "type": "es6",
-
   "scripts": {
+    "test": "jest",
     "build": "babel src -d dist",
     "start": "HEROKU_APP_NAME=https://ragu-cart-vuejs.herokuapp.com yarn serve",
     "serve": "node dist/index.js",
@@ -19,5 +19,8 @@
     "vue-server-renderer": "^2.6.12",
     "webpack": "^4.44.1",
     "webpack-bundle-analyzer": "^3.8.0"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
   }
 }
