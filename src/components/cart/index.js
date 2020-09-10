@@ -49,7 +49,7 @@ export default {
   hydrate(element) {
     app.$mount(element.firstChild);
 
-    element.addEventListener('add-to-cart', (e) => {
+    window.addEventListener('add-to-cart', (e) => {
       app.addProductToCart(e.detail);
     });
   }
