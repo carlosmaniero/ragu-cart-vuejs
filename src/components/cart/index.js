@@ -30,7 +30,7 @@ function createVueApp() {
         </svg>
       </div>
 
-      <strong v-bind:class="style['value']">{{ this.cartService.count() }}</strong>
+      <strong v-bind:class="style['value']">Total: {{ this.cartService.count() }}</strong>
       </div>
     `
   });
