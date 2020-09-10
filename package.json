@@ -1,0 +1,19 @@
+{
+  "type": "es6",
+  "scripts": {
+    "start": "babel-node index.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "babel-cli": "^7.0.0",
+    "chunks-2-json-webpack-plugin": "^1.0.4",
+    "ragu-server": "^0.0.2",
+    "vue": "^2.6.12",
+    "vue-server-renderer": "^2.6.12",
+    "webpack": "^4.44.1",
+    "webpack-bundle-analyzer": "^3.8.0"
+  }
+}
