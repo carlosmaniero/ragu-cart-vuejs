@@ -2,6 +2,10 @@ import Vue from "vue";
 import {CartService} from "../../services/cart-service";
 import style from './cart.css';
 
+const _non_webpack_require = (requireId) => {
+  return eval('require')(requireId);
+}
+
 function createVueApp() {
   return new Vue({
     data() {
@@ -51,8 +55,7 @@ export default {
   async render() {
     const app = createVueApp();
 
-    let requireId = 'vue-server-renderer';
-    const vueServerRenderer = require(requireId);
+    const vueServerRenderer = _non_webpack_require('vue-server-renderer');
     const renderer = vueServerRenderer.createRenderer();
 
     return {

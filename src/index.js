@@ -1,4 +1,5 @@
-import * as domino from "domino";
+const {merge} = require("webpack-merge");
+const domino = require("domino");
 
 const {ComponentsCompiler, createDefaultWebpackConfiguration, RaguServer} = require("ragu-server");
 const path = require('path');
@@ -20,10 +21,44 @@ const init = async () => {
     },
     components: {
       namePrefix: 'cart',
+      preCompiledOutput: path.join(__dirname, 'pre_compiled_components'),
       output: path.join(__dirname, 'component-assets'),
       sourceRoot: path.join(__dirname, 'components')
     },
     port,
+    webpackPreCompilerConfiguration: merge(
+      createDefaultWebpackConfiguration({}),
+      {
+        target: 'node',
+        module: {
+          rules: [
+            {
+              test: /\.m?js$/,
+              exclude: /(node_modules|bower_components)/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: [
+                    [
+                      '@babel/preset-env',
+                      {
+                        "targets": {
+                          "node": "current"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        output: {
+          filename: '[name].js',
+          publicPath: '/'
+        },
+      }
+    ),
     webpackConfig: createDefaultWebpackConfiguration({})
   };
 
