@@ -2,11 +2,7 @@ import Vue from "vue";
 import {CartService} from "../../services/cart-service";
 import style from './cart.css';
 
-const _non_webpack_require = (requireId) => {
-  return eval('require')(requireId);
-}
-
-function createVueApp() {
+export function createCartListVueApp() {
   return new Vue({
     data() {
       return {
@@ -43,30 +39,5 @@ function createVueApp() {
     `
   });
 }
-
-export default {
-  dependencies: [
-    {
-      nodeRequire: 'vue',
-      globalVariable: 'Vue',
-      dependency: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js'
-    }
-  ],
-  async render() {
-    const app = createVueApp();
-
-    const vueServerRenderer = _non_webpack_require('vue-server-renderer');
-    const renderer = vueServerRenderer.createRenderer();
-
-    return {
-      html: await renderer.renderToString(app)
-    }
-  },
-  hydrate(element) {
-    const app = createVueApp();
-
-    app.$mount(element.firstChild);
-  }
-};
 
 
