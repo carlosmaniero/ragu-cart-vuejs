@@ -2,7 +2,7 @@
   "type": "es6",
   "scripts": {
     "test": "jest",
-    "build": "yarn ragu:build",
+    "build": "HEROKU_APP_NAME=https://ragu-cart-vuejs.herokuapp.com yarn ragu:build",
     "start": "HEROKU_APP_NAME=https://ragu-cart-vuejs.herokuapp.com yarn ragu:start",
     "ragu:build": "ragu-server build ragu-config.js",
     "ragu:start": "ragu-server run ragu-config.js",

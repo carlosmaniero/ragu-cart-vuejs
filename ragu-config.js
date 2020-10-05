@@ -9,7 +9,7 @@ const port = parseInt(process.env.PORT || '3101');
 global.window = domino.createWindow();
 global.document = window.document;
 
-const assetsPrefix = process.env.HEROKU_APP_NAME ? `${process.env.HEROKU_APP_NAME}` : `http://localhost:${port}/component-assets/`;
+const assetsPrefix = process.env.HEROKU_APP_NAME ? `${process.env.HEROKU_APP_NAME}/component-assets/` : `http://localhost:${port}/component-assets/`;
 
 const config = {
   server: {
