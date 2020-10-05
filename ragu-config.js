@@ -45,7 +45,7 @@ const config = {
       {
         nodeRequire: 'vue',
         globalVariable: 'Vue',
-        dependency: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js'
+        dependency: 'https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js'
       }
     ]
   },
