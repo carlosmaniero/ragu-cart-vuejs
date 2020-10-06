@@ -17,8 +17,6 @@ export function createVueCartApp() {
         this.$forceUpdate();
       },
       showCart() {
-        alert(1);
-
         this.$el.dispatchEvent(new CustomEvent('show-cart', {bubbles: true}));
       },
       updateCart() {
@@ -26,14 +24,10 @@ export function createVueCartApp() {
       }
     },
     mounted() {
-      console.log('mounting...');
-
       window.addEventListener('add-to-cart', this.addProductToCart);
       window.addEventListener('cart-updated', this.updateCart);
     },
     destroyed() {
-      console.log('destroying...');
-
       window.removeEventListener('add-to-cart', this.addProductToCart);
       window.removeEventListener('cart-updated', this.updateCart);
     },
