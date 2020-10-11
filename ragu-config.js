@@ -24,14 +24,7 @@ const config = {
     watchMode: process.env.WATCH_MODE === 'true',
     webpack: {
       view: raguVueWebpackViewConfig(assetsPrefix),
-      hydrate: merge(
-        raguVueWebpackHydrateConfig(assetsPrefix),
-        {
-          resolve: {
-            modules: [path.resolve(__dirname, 'node_modules')]
-          }
-        }
-      ),
+      hydrate: raguVueWebpackHydrateConfig(assetsPrefix),
     },
     output: {
       view: path.join(__dirname, 'compiled/view_components'),
