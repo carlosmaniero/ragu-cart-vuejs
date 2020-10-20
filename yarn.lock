@@ -6406,6 +6406,11 @@ is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   dependencies:
     isobject "^3.0.1"
 
+is-plain-object@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-5.0.0.tgz#4427f50ab3429e9025ea7d52e9043a9ef4159344"
+  integrity sha512-VRSzKkbMm5jMDoKLbltAkFQ5Qr7VDiTFGXxYFXXowVj387GeGNOCsOH6Msy00SGZ3Fp84b1Naa1psqgcCIEP5Q==
+
 is-potential-custom-element-name@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-potential-custom-element-name/-/is-potential-custom-element-name-1.0.0.tgz#0c52e54bcca391bb2c494b21e8626d7336c6e397"
@@ -9460,15 +9465,17 @@ ragu-server@0.0.28:
     webpack-node-externals "^2.5.2"
     yargs "^16.0.3"
 
-ragu-server@^0.0.27:
-  version "0.0.27"
-  resolved "https://registry.yarnpkg.com/ragu-server/-/ragu-server-0.0.27.tgz#ce563ae7820bfda2dbea665b4153379063a7d02c"
-  integrity sha512-7c+cJPhCwgWuv7/AzYNSkcOeQgdtKXo7gqpW+3DzOe1QwZFGgx12NT1HHcxDu4R4Vxwl/eUqLYI/G03CtxRR/A==
+ragu-server@^0.0.35:
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/ragu-server/-/ragu-server-0.0.35.tgz#4b3a662725763264429d2632d17a46dd4d230370"
+  integrity sha512-PTBXh8S/EHH7udHpwGqVasz0/rOUFC3KcwSlm9vB8qnxUK3Mg0OYQxX8hGXIK8CYjdaFuhT8AeCulkCcRlNL+Q==
   dependencies:
     "@types/webpack-node-externals" "^2.5.0"
     chalk "^4.1.0"
     chunks-2-json-webpack-plugin "^1.0.4"
+    deepmerge "^4.2.2"
     express "^4.17.1"
+    is-plain-object "^5.0.0"
     npm-programmatic "^0.0.12"
     ragu-dom "^0.0.22"
     webpack "^4.44.1"
@@ -9477,10 +9484,10 @@ ragu-server@^0.0.27:
     webpack-node-externals "^2.5.2"
     yargs "^16.0.3"
 
-ragu-vue-server-adapter@0.0.28:
-  version "0.0.28"
-  resolved "https://registry.yarnpkg.com/ragu-vue-server-adapter/-/ragu-vue-server-adapter-0.0.28.tgz#e8e2c189e550e6c8c8536a1af3d05c5ae9843cbf"
-  integrity sha512-bOU7FJtR4+bhQPTiXIe5j+Zyw9ZSl825Rzfv3QgXwyyiMpWZ9TqsqEpJwX7uR6cwnOHYWLbBu+GcN55p1MerWg==
+ragu-vue-server-adapter@^0.0.37:
+  version "0.0.37"
+  resolved "https://registry.yarnpkg.com/ragu-vue-server-adapter/-/ragu-vue-server-adapter-0.0.37.tgz#cdab951304db82971a935f1e2d09f7e382d3d06d"
+  integrity sha512-AOxjtSZE27MK9qP+8FEOWXoqeeao3qygSnZoIdsNBdICWCMhKvCMGCKTEpBrNlyvdQ4GGo059PIXdKNFPyzB7w==
   dependencies:
     "@babel/core" "~7.2"
     "@babel/plugin-proposal-class-properties" "~7.3"
@@ -9507,7 +9514,7 @@ ragu-vue-server-adapter@0.0.28:
     node-sass "~4"
     optimize-css-assets-webpack-plugin "~3.2"
     ragu-dom "^0.0.15"
-    ragu-server "^0.0.27"
+    ragu-server "^0.0.35"
     sass-loader "~7.1"
     style-loader "^1.2.1"
     uglifyjs-webpack-plugin "~1.2"
