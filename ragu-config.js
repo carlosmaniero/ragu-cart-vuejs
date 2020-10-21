@@ -18,6 +18,13 @@ module.exports = createVueRaguServerConfig({
   },
   components: {
     namePrefix: 'ragu-vue-cart-app',
-    sourceRoot: path.join(__dirname, 'src', 'ragu-components')
+    sourceRoot: path.join(__dirname, 'src', 'ragu-components'),
+    defaultDependencies: [
+      {
+        nodeRequire: 'vue',
+        globalVariable: 'Vue',
+        dependency: 'https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js'
+      }
+    ]
   }
 });
