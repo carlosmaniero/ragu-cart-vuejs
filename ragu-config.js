@@ -7,9 +7,11 @@ const port = parseInt(process.env.PORT || '3101');
 global.window = domino.createWindow();
 global.document = window.document;
 
-const assetsPrefix = process.env.HEROKU_APP_NAME ? `${process.env.HEROKU_APP_NAME}/component-assets/` : `http://localhost:${port}/component-assets/`;
+const baseurl = process.env.HEROKU_APP_NAME ? process.env.HEROKU_APP_NAME : `http://localhost:${port}`;
+const assetsPrefix = `${baseurl}/component-assets/`;
 
 module.exports = createVueRaguServerConfig({
+  baseurl,
   compiler: {
     assetsPrefix: assetsPrefix
   },
